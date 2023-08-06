@@ -20,7 +20,7 @@ import br.com.neki.skillconnect.security.service.TokenService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/auth")
 public class AuthenticationController {
 
 	@Autowired
