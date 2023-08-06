@@ -16,7 +16,7 @@ import br.com.neki.skillconnect.service.SkillService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/skill")
+@RequestMapping("/api/skills")
 public class SkillController {
 	
     private final SkillService skillService;

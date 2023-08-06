@@ -11,8 +11,8 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "skill_associate")
-public class SkillAssociation {
+@Table(name = "user_skill")
+public class UserSkill {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)

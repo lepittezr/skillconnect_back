@@ -1,0 +1,1 @@
+CREATE SEQUENCE skills_id_seq START 1;
