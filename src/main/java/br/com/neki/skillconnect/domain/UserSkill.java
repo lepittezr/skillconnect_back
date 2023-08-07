@@ -3,6 +3,8 @@ package br.com.neki.skillconnect.domain;
 import br.com.neki.skillconnect.security.domain.User;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -27,7 +29,8 @@ public class UserSkill {
 	private Skill skill;
 	
 	@Column(nullable = false)
-	private int level;
+	@Enumerated(EnumType.STRING)
+	private SkillLevel level;
 
 	public Long getId() {
 		return id;
@@ -53,14 +56,13 @@ public class UserSkill {
 		this.skill = skill;
 	}
 
-	public int getLevel() {
+	public SkillLevel getLevel() {
 		return level;
 	}
 
-	public void setLevel(int level) {
+	public void setLevel(SkillLevel level) {
 		this.level = level;
 	}
-	
 	
 
 }

@@ -28,11 +28,6 @@ public class SkillController {
 	@Autowired
 	SkillRepository skillRepository;
 	
-	@PostMapping("/postSkill")
-	public ResponseEntity<String> postSkill(@RequestBody @Valid SkillDTO skillDTO) {
-	    skillService.addSkill(skillDTO);
-	    return ResponseEntity.ok().build();
-	}
 	
     @GetMapping("/list")
     public List<SkillDTO> listar() {

@@ -31,8 +31,11 @@ public class SecurityConfigurations {
 				.authorizeHttpRequests(authorize -> authorize
 						.requestMatchers(HttpMethod.POST, "/auth/register").permitAll()
 						.requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
-						.requestMatchers(HttpMethod.POST, "/api/skills/postSkill").hasRole("ADMIN")
-						.requestMatchers(HttpMethod.GET, "/api/skills/list").permitAll()
+						.requestMatchers(HttpMethod.GET, "/api/skills/list").authenticated()
+	                    .requestMatchers(HttpMethod.POST, "/api/userSkills/associateSkill").authenticated()
+	                    .requestMatchers(HttpMethod.PUT, "/api/userSkills/updateSkill/**").authenticated()
+	                    .requestMatchers(HttpMethod.DELETE, "/api/userSkills/deleteSkill/**").authenticated()
+	                    .requestMatchers(HttpMethod.GET, "/api/userSkills/listSkillsUser/**").authenticated()
 
 						.anyRequest().authenticated()
 				)
