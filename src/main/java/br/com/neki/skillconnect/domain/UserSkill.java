@@ -13,7 +13,7 @@ import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "user_skill")
+@Table(name = "user_skills")
 public class UserSkill {
 	
 	@Id
@@ -31,6 +31,17 @@ public class UserSkill {
 	@Column(nullable = false)
 	@Enumerated(EnumType.STRING)
 	private SkillLevel level;
+
+	public UserSkill(Long id, User user, Skill skill, SkillLevel level) {
+		this.id = id;
+		this.user = user;
+		this.skill = skill;
+		this.level = level;
+	}
+	
+	public UserSkill() {
+		
+	}
 
 	public Long getId() {
 		return id;
@@ -63,6 +74,5 @@ public class UserSkill {
 	public void setLevel(SkillLevel level) {
 		this.level = level;
 	}
-	
 
 }

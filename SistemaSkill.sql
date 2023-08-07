@@ -16,12 +16,15 @@ CREATE TABLE skills (
     description TEXT
 );
 
+-- Definição do tipo ENUM para o nível das habilidades do usuário
+CREATE TYPE skill_level_enum AS ENUM ('basic', 'intermediate', 'advanced');
+
 -- Tabela associativa entre usuários e habilidades (com os relacionamentos)
-CREATE TABLE user_skill (
+CREATE TABLE user_skills (
     id SERIAL PRIMARY KEY,
     user_id INTEGER NOT NULL,
     skill_id INTEGER NOT NULL,
-    level INTEGER NOT NULL,
+    level skill_level_enum NOT NULL,
     FOREIGN KEY (user_id) REFERENCES users (id) ON DELETE CASCADE,
     FOREIGN KEY (skill_id) REFERENCES skills (id) ON DELETE CASCADE
 );
@@ -33,4 +36,4 @@ CREATE SEQUENCE users_id_seq START 1;
 CREATE SEQUENCE skills_id_seq START 1;
 
 -- Criação da sequence para a tabela user_skill
-CREATE SEQUENCE user_skill_id_seq START 1;
+CREATE SEQUENCE user_skills_id_seq START 1;

@@ -21,6 +21,9 @@ public class Skill {
 	@Column(nullable = false)
 	private String description;
 
+	public Long getSkillId() {
+		return id;
+	}
 
 	public Long getId() {
 		return id;
