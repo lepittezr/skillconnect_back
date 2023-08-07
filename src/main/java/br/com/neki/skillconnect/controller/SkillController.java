@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.neki.skillconnect.dto.SkillDTO;
 import br.com.neki.skillconnect.repository.SkillRepository;
 import br.com.neki.skillconnect.service.SkillService;
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 
 @RestController
@@ -30,6 +31,7 @@ public class SkillController {
 	
 	
     @GetMapping("/list")
+	@Operation(summary = "Lista todas as skills", description = "Listagem de Skills")
     public List<SkillDTO> listar() {
         return skillService.findAll();
     }

@@ -33,24 +33,19 @@ public class UserSkillService {
 	}
 	
 	 public void associateSkill(UserSkillDTO userSkillDTO) {
-	        // Obtém o usuário logado
 	        User currentUser = authService.getCurrentUser();
 	        if (currentUser == null) {
-	            // Lança uma exceção ou lida com o cenário de usuário não logado
 	            throw new RuntimeException("Usuário não logado.");
 	        }
 
-	        // Busca a habilidade no banco de dados
 	        Skill skill = skillRepository.findById(userSkillDTO.getSkillId())
 	                .orElseThrow(() -> new EntityNotFoundException("Habilidade inválida"));
 
-	        // Verifica se já existe uma associação entre o usuário e a habilidade
 	        UserSkill existingAssociation = userSkillRepository.findByUserAndSkill(currentUser, skill);
 	        if (existingAssociation != null) {
 	            existingAssociation.setLevel(userSkillDTO.getLevel());
 	            userSkillRepository.save(existingAssociation);
 	        } else {
-	            // Cria uma nova associação entre o usuário e a habilidade
 	            UserSkill userSkill = new UserSkill();
 	            userSkill.setUser(currentUser);
 	            userSkill.setSkill(skill);

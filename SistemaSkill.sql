@@ -17,7 +17,7 @@ CREATE TABLE skills (
 );
 
 -- Definição do tipo ENUM para o nível das habilidades do usuário
-CREATE TYPE skill_level_enum AS ENUM ('basic', 'intermediate', 'advanced');
+CREATE TYPE skill_level_enum AS ENUM ('BASIC', 'INTERMEDIATE', 'ADVANCED');
 
 -- Tabela associativa entre usuários e habilidades (com os relacionamentos)
 CREATE TABLE user_skills (
