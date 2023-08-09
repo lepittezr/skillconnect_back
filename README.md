@@ -1,7 +1,8 @@
-# skillconnect 
+# skillconnect
 ## Backend
 
-Projeto Spring Boot criado que contempla as seguintes funcionalidades:
+
+Projeto Spring Boot que contempla as seguintes funcionalidades:
 
 - Serviço de Login - Recebe login e senha e verifica se está igual ao da database. A senha é criptografada. Ao logar, retorna um token para acessar aos demais serviços.
 
@@ -15,4 +16,8 @@ Projeto Spring Boot criado que contempla as seguintes funcionalidades:
 
 - Serviço de Excluir Associação de Skill - Esse serviço recebe o id da associação da skill e exclui da base de dados.
 
+
   Projeto contém segurança JWT e documentação pelo Swagger.
+  Também possui um script SQL com a modelagem do banco de dados e uma carga de dados de Skills.
+#
+by Letícia Pittezr
